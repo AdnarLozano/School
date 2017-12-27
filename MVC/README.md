@@ -1,2 +1,2 @@
-# MVC Work
-Projects done at Moreno Valley College.
+# Moreno Valley College
+Projects done at Moreno Valley College (MVC).
