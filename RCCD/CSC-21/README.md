@@ -1,1 +1,1 @@
-# Introduction to Operating Systems
+# CSC-21 Introduction to Operating Systems
