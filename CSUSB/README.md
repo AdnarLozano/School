@@ -1,2 +1,2 @@
-# California State University San Bernardino
+# California State University San Bernardino (CSUSB)
 Projects done at CSUSB.
