@@ -1,0 +1,160 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int n_mat;
+int n;
+int array[7] = {0,1,2,3,4,5,6};
+int** first;
+int** second;
+int** firstAferS;
+bool test = false;
+void swap(int x, int y){
+    int temp = array[x];
+    array[x]=array[y];
+    array[y]=temp;
+    return;
+}
+int** mSWAP(int pass1,int pass2)
+{
+            for(int i = 0; i<n; i++)
+            {
+                int temp1=first[i][pass1];
+                first[i][pass1]=first[i][pass2];
+                first[i][pass2]=temp1;
+            }
+            for (int j = 0; j<n; j++)
+            {
+                int temp2=first[pass1][j];
+                first[pass1][j]=first[pass2][j];
+                first[pass2][j]=temp2;
+            }
+    return first;
+}
+void printArray(int size){
+    int i;
+    test = true;
+    for (i=0;i<size;i++)
+        {
+            firstAferS = mSWAP(i,array[i]);
+            //cout << array[i] << " ";
+        }
+    //cout << endl;
+
+/*for ( int i = 0; i < n; i++ )
+   {
+      for ( int j = 0; j < n; j++ )
+      {
+         cout <<  firstAferS[i][j]<<" ";
+
+      }cout<<endl;
+   }*/
+
+    for ( int i = 0; i < n && test== true; i++ )
+   {
+      for ( int j = 0; j < n&& test== true; j++ )
+      {
+         if ((firstAferS[i][j])!= (second[i][j]))
+         {
+             test=false;
+         }
+      }
+   }
+   if(test==true)
+    {
+    cout<<"Given two matrices are isomorphic based on ";
+    for (i=0;i<size;i++)
+        {
+            cout << i<<"->"<<array[i] << ", ";
+        }
+    cout << " rotation."<<endl;
+    exit;
+   }
+
+    return;
+}
+void permute(int k,int size){
+    int i;
+    if (k==0&& test==false)
+        printArray(size);
+    else{
+        for (i=k-1;i>=0;i--){
+            swap(i,k-1);
+            permute(k-1,size);
+            swap(i,k-1);
+        }
+
+    }
+
+    return;
+}
+int** LoadMatrix(string filename)
+{
+   ifstream in;
+   in.open (filename.c_str());
+
+   if ( !in )
+   {
+        cout<<"File is not there!";
+        exit( 1 );
+   }
+   in >> n;
+   int **a = new int *[n];
+
+   for ( int i = 0; i < n; i++ )
+   {
+      a[i] = new int[n];
+   }
+
+   for ( int i = 0; i < n; i++ )
+   {
+      for ( int j = 0; j < n; j++ )
+      {
+         in >> a[i][j];
+      }
+   }
+   return a;
+}
+int* PrintMatrix(int** adj)
+{
+    int c_edge [7]= {};
+    int edge = 0;
+    for ( int i = 0; i < n; i++ )
+   {
+      for ( int j = 0; j < n; j++ )
+      {
+         cout <<  adj[i][j]<<" ";
+         if(adj[i][j])
+         {
+             edge++;
+             c_edge[i]++;
+         }
+
+      }cout<<"  # of edges in "<<i<<" is "<<c_edge[i]<<endl;
+   }
+
+   cout<<"\nTotal edges are: "<<edge<<endl<<endl;
+   return c_edge;
+}
+int main()
+{
+	int* firstE;
+	int* secondE;
+	string filename;
+
+    cout << "Enter first file name: ";
+    cin >> filename;
+    first= LoadMatrix(filename);
+    cout << "Enter second file name: ";
+    cin >> filename;
+    second= LoadMatrix(filename);
+    firstE=PrintMatrix(first);
+    secondE=PrintMatrix(second);
+    permute(7,7);
+    if (test==false)
+            cout<<"Given two matrices are NOT isomorphic."<<endl;
+	return 0;
+}
