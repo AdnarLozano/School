@@ -1,0 +1,59 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int counts = 1;
+void recursiveSum(list<int> numbers, int target, list<int> partialSum)
+{
+        int sum = 0;
+        for (list<int>::iterator list = partialSum.begin(); list != partialSum.end(); list++)
+        {
+            sum += *list;
+        }
+        if(sum == target)
+        {
+			cout << "#" << counts << ": ";
+
+                for (list<int>::iterator list = partialSum.begin(); list != partialSum.end(); list++)
+                {
+                    cout << *list << " ";
+                }
+				cout << "= 100.\n";
+				counts++;
+        }
+        if(sum >= target)
+            return;
+        int num;
+        for (list<int>::iterator i = numbers.begin(); i != numbers.end(); i++)
+        {
+            num = *i;
+           list<int> remaining;
+            for(list<int>::iterator j = i; j != numbers.end(); j++)
+            {
+                if(j == i)
+				continue;
+                remaining.push_back(*j);
+            }
+            list<int> partialLst = partialSum;
+            partialLst.push_back(num);
+            recursiveSum(remaining,target,partialLst);
+
+        }
+}
+
+void summation(list<int> numbers,int target)
+{
+    recursiveSum(numbers,target,list<int>());
+}
+int main()
+{
+    list<int> set;
+	for(int i = 1; i < 100; i++)
+	{
+    set.push_back (i);
+	}
+    int total = 100;
+    summation(set, total);
+    return 0;
+}

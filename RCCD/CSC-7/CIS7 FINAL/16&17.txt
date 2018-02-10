@@ -1,0 +1,106 @@
+16.
+struct Node{	Node* left;	Node* right;};
+//fill in your code here!
+int height(node* n)
+{
+
+	if (n == NULL)
+		return 0;
+	else
+	{
+		int l_Height = height(n->left); 
+		int	r_Height = height(n->right);
+		if(l_Height > r_Height)
+			return(l_Height+1);
+		else return(r_Height+1);
+
+	}
+}
+
+17.
+#include<iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int values;
+int** results;
+int visitedNode[7] = {0};
+int edges = 0;
+
+int** LoadMatrix(string filename)
+{
+	ifstream in;
+	in.open(filename);
+	in >> values;
+   
+	int **result;
+	result = new int *[values];
+
+   for ( int i = 0; i < values; i++ )
+   {
+	  result[i] = new int[values];
+   }
+   for ( int i = 0; i < values; i++ )
+
+   {
+      for ( int j = 0; j < values; j++ )
+      {
+         in >> result[i][j];
+      }
+   }
+
+   return result;
+}
+
+void isGraph(int v)
+{
+	visitedNode[v] = true;
+	for(int i = 0; i < values; i++)
+	{
+		if(!visitedNode[i]&&results[v][i]== true)
+            isGraph(i);
+	}
+
+	for(int i = 0; i < values; i++)
+	{
+			if (visitedNode[i] == false)
+			{
+				cout << "This graph is not a tree.\n";
+					exit(0);
+			}
+	}
+	if( edges == values-1)
+		cout << "Tree\n";
+	else
+		cout << "Not a tree.\n";
+	exit(0);
+
+}
+
+int main()
+{
+
+	string filename;
+
+	cout << "Enter the filename: ";
+	cin >> filename;
+	results = LoadMatrix(filename);
+	
+	  for ( int i = 0; i < values; i++ )
+
+   {
+      for ( int j = 0; j < values; j++ )
+      {
+		 if(results[i][j] == 1)
+		 {
+			edges++;
+		 }
+      }
+   }
+   edges = edges / 2;
+   isGraph(0);
+
+	return 0;
+}
