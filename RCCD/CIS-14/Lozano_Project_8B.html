@@ -1,0 +1,49 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/18/14
+Project 8B
+-->
+
+<html>
+<head>
+	<title>Project 8B: Temperature by Adnar Lozano</title>
+
+	<script type="text/javascript">
+
+	var SIZE = prompt("How many temperatures to enter?: ");
+	SIZE = parseInt(SIZE);
+   
+	var values = new Array();				
+	var largest = 0;		
+	var lowest = 100;	
+	var average = 0;
+	var total = 0;
+
+	for (var i = 0; i < SIZE; i++)
+	{
+		values[i] = parseInt(prompt("\nEnter temperature value: "));
+		total += values[i];
+	}
+   
+
+	for (var i = 0; i < SIZE; i++)
+	{
+		if (values[i] > largest)
+			largest = values[i];
+
+		if (values[i] < lowest)
+			lowest = values[i];
+	}
+	
+	average = (total / SIZE);
+
+	document.writeln("\nThe largest temperature you entered is " + largest + ".<br/>");
+	document.writeln("\nThe lowest temperature you entered is " + lowest + ".<br/>");
+	document.writeln("\nThe average temperature is " + average + ".<br/>");
+	</script>
+
+</head>
+</body>
+</html>

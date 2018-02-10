@@ -1,0 +1,73 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+10/14/14
+Programing Challenge 5_2
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Programming Challenge 5.2</title>
+<script>
+var faceCard1 = 0;
+var faceCard2 = 0;
+
+function goToWar()
+{
+ 	var name1 = " "; var name2 = " ";
+	name1 = prompt("Enter your name: ", " ");
+	name2 = prompt("Enter your name: ", " ");
+	var playerOne = 0; 
+	var playerTwo = 0; 
+	//var oneCard = 0; 
+	//var twoCard = 0; 
+	var count = 1;
+	document.write("<table width = 40% align='center'><tr><td colspan = '2'><h3>The Game of War</h3></td></tr>"); 
+	while ((playerOne < 10) && (playerTwo < 10))
+	{
+		faceCard1 = Math.floor(Math.random() * 13 + 1);
+		faceCard2 = Math.floor(Math.random() * 13 + 1);
+		if(faceCard1 > faceCard2)
+			playerOne++;
+		else
+			if(twoCard > oneCard)
+				playerTwo++;
+		document.write("<tr><td colspan = '2'>&nbsp;</td></tr><tr><td colspan = '2'>Deal Number" + count + ": </td</tr>");
+		document.write("<tr><td>" + name1 + "'s card: " + oneCard + " -- Score: " + playerOne + "</td>");
+		document.write("<td>" + name2 + "'s card: " + twoCard + " -- Score: " + playerTwo + "</td></td>");
+		count++;
+	}
+	if ((playerOne ==10) && (playerTwo != 10))
+		document.write("<tr><td colspan = '2'><h3>The winner is " + name1 + "!</h3></td></tr>");
+	if ((playerTwo == 10) && (playerOne != 10))
+		document.write("<tr><td colspan = '2'><h3>The winner is " + name2 + "!</h3></td></tr>");
+	document.write("</table>");
+}
+
+function faceCards(card1, card2)
+{
+
+}
+</script>
+</<head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+October 14, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Chapter 5 | Programming Challenge 2</h3>
+<body>
+<table align ="center" width ="70%"><tr><td>
+<h1>&nbsp;</h2>
+<h1>Play a Card Game: War</h1>
+<h3>Click to begin the game</h3>
+<p><input type="button" id="war" value="begin the game" onclick="goToWar();" /></p>
+</td></tr>
+</table></body>
+</html>
+

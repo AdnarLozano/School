@@ -1,0 +1,97 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/11/14
+Programing Challenge 7_1
+-->
+
+<html>
+	<head>
+		<title>Chapter 7 Programming Challenge 1</title>
+		<script type="text/javascript">
+
+		function prime(num)
+		{
+			var k = 0;
+			var prime = true;
+			for (k = 2; k < (num - 1); k++)
+			{
+				if ((num % k) == 0)
+					prime = false;
+			}
+			return (prime);
+		}
+			
+		function factorial(num)
+		{
+			var result = 1;
+			var k = 0;
+			for(k = num; k > 1; k--)
+				result = result * k;
+			return (result);
+		}
+		function exp(num1, num2)
+		{
+			var exp = Math.pow(num1, num2);
+			return (exp);
+		}
+		function area(num1, num2)
+		{
+			var area = 0.5*num1*num2;
+			return (area);
+		}
+		function hypoteneuse(num1, num2)
+		{
+			var hypot = Math.sqrt(num1*num1 + num2 * num2);
+			return (hypot);
+		}
+
+		// Main Function
+		function math()
+		{
+		// prompt for numbers and validate entry
+			var x = parseFloat(prompt("Enter a positive number:"));
+			while(x < 0)
+				x = parseFloat(prompt("The number must be positive. Please re-enter:"));
+			var y = parseFloat(prompt("Enter a positive number:"));
+			while(y < 0)
+				y = parseFloat(prompt("The number must be positive. Please re-enter:"));
+			// call exp() function
+			var exponent = exp(x, y);
+			// call area() function
+			var triangle = area(x, y);
+			// call hypoteneuse() function
+			var distance = hypoteneuse(x, y);
+			// display results
+			document.getElementById("num_x").innerHTML = ("<h3>Your first number: " + x + "</h3>");
+			document.getElementById("num_y").innerHTML = ("<h3>Your second number: " + y + "</h3>");
+			document.getElementById("exponent").innerHTML = ("<h3>The value of " + x + " raised to the " + y + " power is " + exponent.toFixed(4) + "</h3>");
+			document.getElementById("area").innerHTML = ("<h3> The area of a right triangle with a base of " + x + " and a height of " + y + " is " + triangle.toFixed(2) + "</h3>");
+			document.getElementById("distance").innerHTML = ("<h3>The distance between two points with coordinates (0,0) and (" + x + "," + y + ") is " + distance.toFixed(2) + "</h3>");
+		}
+		// end Main Function
+		</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+November 11, 2014
+<br/>
+CIS-14A: Javascript
+<br/>
+Programing Challenge 1</h3>
+<body>
+	<div style="width: 600px; margin: auto; color: white; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+	<p style="font-weight: bold;"> Chapter 7: Programming Challenge 1 </p>
+	<p>This page asks the user to enter two positive numbers. It will then calculate the values of: the first number raised to the power of the second number, the area of a right triangle with the first number as the base and the second number as the height, and the value of the hypoteneuse or the distance between any two points from an origin (0,0) and the coordinates of the two entered numbers (x,y), where the first number is the x-value and the second number is the y-value.</p>
+	<input type = "button" onclick = "math()" value = "...Start..." />
+	<div id = "num_x"> &nbsp;</div> 
+	<div id = "num_y"> &nbsp;</div> 
+	<div id = "exponent"> &nbsp;</div> 
+	<div id = "area"> &nbsp;</div>
+	<div id = "distance"> &nbsp;</div>
+</div>
+</body>
+</html>

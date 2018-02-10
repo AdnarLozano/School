@@ -1,0 +1,91 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/11/14
+Programing Challenge 7_2
+-->
+<html>
+<head>
+	<title>Chapter 7 Programming Challenge 2</title>
+	<script type="text/javascript">
+
+	function prime(num)
+	{
+		var k = 0;
+		var prime = true;
+		for (k = 2; k < (num - 1); k++)
+		{
+			if ((num % k) == 0)
+				prime = false;
+		}
+		return (prime);
+	}
+		
+	function factorial(num)
+	{
+		var result = 1;
+		var k = 0;
+		for(k = num; k > 1; k--)
+			result = result * k;
+		return (result);
+	}
+	function exp(num1, num2)
+	{
+		var exp = Math.pow(num1, num2);
+		return (exp);
+	}
+	function area(num1, num2)
+	{
+		var area = 0.5*num1*num2;
+		return (area);
+	}
+	function hypoteneuse(num1, num2)
+	{
+		var hypot = Math.sqrt(num1*num1 + num2 * num2);
+		return (hypot);
+	}
+
+	//	Main Function
+	function math()
+	{
+	// prompt for number and validate entry
+		var number = parseInt(prompt("Enter a whole number between 1 and 20"));
+		while(number < 1 || number > 20)
+			number = parseInt(prompt("The number must be between 1 and 20"));
+		// call prime() function
+		var primeNum = prime(number);
+		// call factorial() function
+			var result = factorial(number);
+		// display results
+		document.getElementById("your_num").innerHTML = ("<h3>Your number: " + number + "</h3>");
+		if (primeNum == true)
+			document.getElementById("prime_num").innerHTML = ("<h3>" + number + " is a prime number.</h3>");
+		else
+			document.getElementById("prime_num").innerHTML = ("<h3>" + number + " is not a prime number.</h3>");
+		document.getElementById("fact_num").innerHTML = ("<h3>" + number + "! = " + result + "</h3>");
+	}
+	// end Main Function
+
+	</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+November 11, 2014
+<br/>
+CIS-14A: Javascript
+<br/>
+Programing Challenge 2</h3>
+<body>
+<div style="width: 500px; color: white; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+	<p style="font-weight: bold;"> Chapter 7: Programming Challenge 2 </p>
+	<p>This page asks the user to enter a whole number between 1 and 20. It will display whether the number is prime or not and will then display the factorial of the number.</p>
+	<input type = "button" onclick = "math()" value = "...Start..." />
+	<div id = "your_num"> &nbsp;</div> 
+	<div id = "prime_num"> &nbsp;</div> 
+	<div id = "fact_num"> &nbsp;</div>
+</div>
+</body>
+</html>

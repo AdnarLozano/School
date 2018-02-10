@@ -1,0 +1,53 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript
+C. Andersen
+09/30/14A
+Project_Chapter3_1
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Temperature Converter</title>
+<script type="text/javascript">
+	
+	function getValueAndConvert() {
+		userAnswer = prompt("Enter temperature: ");
+		getType = prompt("Was that temperature in Celsius - 'C' - or Fahrenheit - 'F'? ");
+		if (getType.toUpperCase() == 'C'){
+			newTemp = ( (5/9) * (userAnswer - 32) );
+			message = (userAnswer + " = " + newTemp + " in Fahrenheit.");
+			alert(message);
+		}
+		else if (getType.toUpperCase() == 'F'){
+			newTemp = ( (userAnswer * (5/9)) + 32);
+			message = (userAnswer + " = " + newTemp + " in Celsius.");
+			alert(message);
+		}
+		else{
+			alert("You did not specified Celsius or Fahrenheit as the input. Could not process request.");
+		}
+				
+	}
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+September 30, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Temperature Converter</h3>
+<body>
+	<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+		<p style="font-weight: bold;">Chapter 3 | Programming Challenge 1</p>
+		<p>This page will prompt user to enter a temperature. Then will ask user to state wether the input is in Fahrenheit or Celsius. Then, the program, will convert the given input into the other temperature metric; i.e. if given Fahrenheit the program will convert tempertature into Celsius and vice versa.</p>			
+		<br /><hr /><br />			
+		<input type="button" onclick="getValueAndConvert()" value="Click here to enter tempertaure." />
+	</div>
+</body>
+</html>

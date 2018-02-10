@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Circle Calculations</title>
+	<script>
+		function calculate()
+		{
+			var radius = document.Circle.txtRadius.value;
+			var diameter = 2.0 * radius;
+			var circumference = 2.0 * Math.PI * radius;
+			var area = Math.PI * Math.pow(radius, 2);
+
+			document.Circle.txtDiameter.value = diameter;
+			document.Circle.txtCircumference.value = circumference;
+			document.Circle.txtArea.value = area;
+		}
+
+		function reset()
+		{
+			document.Circle.txtRadius.value = " ";
+			document.Circle.txtDiameter.value = " ";
+			document.Circle.txtCircumference.value = " ";
+			document.Circle.txtArea.value = " ";
+		}
+	</script>
+</head>
+<body>
+<h1>Circle Calculations</h1>
+<form name="Circle">
+<table>
+<tr>
+	<td>Radius:</td>
+	<td>
+		<input type="text" name="txtRadius" id="txtRadius" value=" "/>
+	</td>
+	<td>
+		<input type="button" name="btnReset" id="btnReset" value="Clear" onclick="reset()"/>
+	</td>
+	<td>
+		<input type="button" name="btnCalculate" id="btnCalculate" value="Calculate" onclick="calculate()"/>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Diameter:</td>
+	<td>
+		<input type="text" name="txtDiameter" id="txtDiameter" value=" "/>
+	</td>
+</tr>
+<tr>
+	<td>Circumference:</td>
+	<td>
+		<input type="text" name="txtCircumference" id="txtCircumference" value=" "/>
+	</td>
+<tr>
+	<td>Area:</td>
+	<td>
+		<input type="text" name="txtArea" id="txtArea" value=" "/>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

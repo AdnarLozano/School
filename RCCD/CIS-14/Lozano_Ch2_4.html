@@ -1,0 +1,49 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript
+C. Andersen
+09/16/14A
+Project_Chapter2_4
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Alphabetize 2 names</title>
+<script type="text/javascript">
+	
+	var firstName;
+	var secondName;
+	var message;
+			
+
+	function alphaOrderNames() {
+		firstName = prompt("Enter 1st name: ");
+		secondName = prompt("Enter 2nd name: ");
+		message = (firstName < secondName) ? ("<p>1st name = " + firstName + "<br />2nd name = " + secondName + "</p>") : ( (firstName > secondName) ? ("<p>1st name = " + secondName + "<br />2nd name = " + firstName + "</p>") : "<p>The names are the same.</p>" );				
+				document.write(message);				
+			}
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+September 16, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Alphabetize 2 names</h3>
+<body>
+	<div style="width: 500px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+			<p style="font-weight: bold;">Chapter 2 | Programming Challenge 4</p>
+			<p>This page will prompt user to enter 2 names. Then it will display the names in alphabetical order. 
+			<br /><br /></p>
+			<input type="button" onclick="alphaOrderNames()" value="Enter names and display in alphabetical order." />
+		</div>
+		
+	</body>
+</html>
+
+ 

@@ -1,0 +1,70 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+10/14/14
+Programing Challenge 5_3
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Programming Challenge 5.3</title>
+<script>
+
+function getSquare()
+{
+ 	var symbol=" ";
+	symbol = prompt("Pick a keyboard symbol for your square, such as a * or # ");
+	var name;
+	name = prompt("What is your name? "," ");
+
+		document.write(symbol + symbol + symbol + symbol + symbol + symbol);
+		document.write("<br />");
+		document.write(symbol + name + symbol);
+		document.write("<br />");
+		document.write(symbol + symbol + symbol + symbol + symbol + symbol);
+		document.write("<br />");
+}
+
+function getTriangle()
+{
+ 	var symbol = " ";
+	symbol = prompt("Pick a keyboard symbol for your triangle, such as a * or # ", " ");
+	var name = " "; count = 0; symbol = "* ";	
+	name = prompt("What is your name? "," ");
+
+		document.write("f\t" + symbol + "    " );
+		document.write("<br />");
+		document.write("   " + symbol + symbol + symbol + "   " );
+		document.write("<br />");
+		document.write("  " + symbol + symbol + symbol + symbol + symbol + "  " );
+		document.write("<br />");
+
+		document.write(symbol + " ");
+
+}
+
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+October 14, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Chapter 5 | Programming Challenge 3</h3>
+<body>
+<table align ="center" width ="70%"><tr><td colspan ="2">
+<h1>&nbsp;</h2>
+<h1>Shapes</h1>
+<h3>Pick a Shape</h3>
+<p><input type="button" id="square" value="Draw a square" onclick="getSquare();" /> &nbsp; &nbsp;
+<input type="button" id="triangle" value="Draw a triangle" onclick="getTriangle();" /> &nbsp; &nbsp;
+<input type="button" id="rectangle" value="Draw a rectangle" onclick="getRectangle();" /></p>
+</td></tr>
+</table></body>
+</html>
+

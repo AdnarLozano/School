@@ -1,0 +1,136 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/18/14
+Project 8A
+-->
+
+<html>
+<head>
+	<title>Project 8A: Multiple Choice Quiz by Adnar Lozano</title>
+
+	<script type="text/javascript">
+
+	var question = new Array(
+		"What is the name of the first president of the United States?", // 1
+		"Which pop duo was the first western band to play in The Peoples Republic of China?", //2
+		"Speed skating originated in which country?", //3
+		"Off the coast of which country did the Amoco Cadiz sink?", //4 
+		"The song 'An Englishman in New York' was about which man?", // 5
+		"In which year did Louis Reard invent the bikini?", //6
+		"In which continent did the ostrich originate?", //7
+		"Julius Caesar said \"The die is cast\" after crossing which river?", //8
+		"What part of the body does a turtle use to breathe?", //9
+		"For how long is a dog pregnant?"); //10
+	var ansA =	   new Array(
+		"George Washington", //1
+		"Wham", //2
+		"Russia", //3
+		"South Africa", //4
+		"Quentin Crisp", //5
+		"1906", //6
+		"Africa", //7
+		"Danube", //8
+		"Belly", //9
+		"9 Weeks"); //10
+	var ansB = 	   new Array(
+		"John Hanson", //1
+		"Simon and Garfunkel", //2 
+		"Netherlands", //3
+		"France", //4
+		"Sting", //5
+		"1926", //6
+		"Australia", //7
+		"Rubicon", //8
+		"Shell", //9
+		"9 Days"); //10
+	var ansC =	   new Array(
+		"Abraham Lincoln", //1
+		"Chas and Dave", //2
+		"Canada", //3
+		"USA", //4
+		"John Lennon", //5 
+		"1946", //6 
+		"North America", //7 
+		"Thames", //8 
+		"Mouth", //9  
+		"9 Months"); //10
+	var ansD = 	   new Array(
+		"George Bush", //1
+		"Right Said Fred", //2
+		"Norway", //3
+		"Spain", //4
+		"Gordon Sumner", //5
+		"1966", //6
+		"Asia", //7
+		"Tiber", //8
+		"Anus", //9
+		"9 Fortnights"); //10
+	var ans = 	   new Array(
+		"A", //1
+		"A", //2
+		"B", //3
+		"B", //4
+		"A", //5
+		"C", //6
+		"A", //7
+		"B", //8
+		"D", //9
+		"A"); //10
+
+	var item;
+	var guess;
+	var right = 0;
+	var wrong = 0;
+	var percentage;
+
+	document.writeln("<h3>");
+
+
+for ( var i = 1; i<=10; i++)
+{
+	do
+	{
+		item = Math.floor(Math.random() * 10);
+
+		document.writeln(question[item] + "<br />");
+		document.writeln("A) " + ansA[item] + "<br />");
+		document.writeln("B) " + ansB[item] + "<br />");
+		document.writeln("C) " + ansC[item] + "<br />");
+		document.writeln("D) " + ansD[item] + "<br />");
+
+		guess = prompt("Question # " + (i++) + ": (Press Q to quit)");
+
+		if(guess.toUpperCase() == ans[item])
+		{
+			document.writeln("<br/>Correct!<br /><br />");
+			right++;
+
+		}		
+		else
+		{
+			document.writeln("<br/>Wrong!<br /><br />");
+			wrong++;
+		}
+	}while(guess.toUpperCase() !== "Q")
+		{
+			document.writeln("-------------------------------<br/>");
+			document.writeln("Thank You for playing<br/>");
+			document.writeln("-------------------------------<br/><br/>");
+		}
+
+		i=10;
+}
+	
+	percentage = (right/(right + wrong)) * (100/1);	
+
+	document.writeln("You have " + right + " right answers. <br/>");
+	document.writeln("You have " + wrong + " wrong answers. <br/>");
+	document.writeln("Your score is " + percentage.toFixed(2) + "% <br/>");
+	
+	</script>
+
+</head>
+</body>
+</html>

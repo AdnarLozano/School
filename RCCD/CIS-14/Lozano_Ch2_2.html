@@ -1,0 +1,51 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript
+C. Andersen
+09/16/14A
+Project_Chapter2_2
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Are you old enough to VOTE?</title>
+<script>
+	var userAge;
+	var ageLimit = 18;
+			
+	function checkAge() {
+	var getAge;
+				
+	getAge = prompt("Enter age: ");
+	userAge = parseInt(getAge);
+	var message;
+	message = (userAge >= ageLimit) ? "You can vote." : "You are too young to vote.";
+		alert(message);
+} 
+</script>
+</head>
+
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+September 16, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Are you old enough to VOTE?</h3>
+
+	<div style="width: 500px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+		<p style="font-weight: bold;">Chapter 2 | Programming Challenge 2</p>
+		<p>This program will decide if the user is old enough to vote.
+		<br /><br />
+		If the user's age is &#8805; 18 then user <strong>IS</strong> old enough to vote.
+		<br />
+		If user's age is &lt; 18 then user <strong>IS NOT</strong> old enough to vote.
+		<br /><br />
+		<input type="button" onclick="checkAge()" value="Enter Age" />
+	</div>	
+</body>
+</html>
+

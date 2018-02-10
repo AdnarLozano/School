@@ -1,0 +1,52 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript
+C. Andersen
+09/16/14A
+Project_Chapter1_2
+-->
+
+<html>
+<head>
+<title>Transportation</title>
+</head>
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+September 16, 2014
+<br/>
+CIS-14A: Javascript
+<br />
+Chapter 1 Programming Challenge 2</h3>
+<body>
+
+	<script type="text/javascript">
+			function getInfo()
+			{
+				var type = prompt("What type of vehicle do you drive?");
+				document.getElementById("my_type").innerHTML = type;
+				var color = prompt("What color is your vehicle?");
+				document.getElementById("my_color").innerHTML = color;
+				var years = prompt("How many years have you owned this vehicle?");
+				document.getElementById("my_years").innerHTML = years;
+				var miles = prompt("What is the mileage on your vehicle?");
+				document.getElementById("my_miles").innerHTML = miles;
+			}
+		</script>
+
+	<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #E7E7E7;">
+		<h1> Chapter 1: Programming Challenge 2 </h1>
+		<p>This page will prompt the user for information on his or her vehicle and will replace the initial values with the user's information.</p>
+		<div>
+		<h1>Your Transportation</h1>
+		<h3>Vehicle Type: <span id = "my_type">Sedan</span><br />
+		Color: <span id = "my_color">Orange</span><br />
+		Years Owned: <span id = "my_years">43</span><br />
+		Mileage: <span id = "my_miles">376,589</span></h3>
+		<p>
+			<input type = "button" onclick = "getInfo()" value = "Enter my information" /></button>
+		</p>
+		</div>
+	</div>
+</body>
+</html>

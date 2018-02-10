@@ -1,0 +1,79 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/4/14
+Programing Challenge Liquid Converter
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Liquid Converter</title>
+	<script>
+		function calculate()
+		{
+			var q = document.Liquid.txtQuarts.value;
+		
+			var cups;
+			var pints; 
+			var gallons;
+
+			cups = q * 4;
+			pints = q * 2;
+			gallons = q/4;
+						
+			document.Liquid.txtCups.value = " " + cups.toFixed(2);
+			document.Liquid.txtPints.value = " " + pints.toFixed(2);
+			document.Liquid.txtGallons.value = " " + gallons.toFixed(2);
+		}
+
+		function reset()
+		{
+			document.Liquid.txtQuarts.value = " ";
+			document.Liquid.txtCups.value = " ";
+			document.Liquid.txtPints.value = " ";
+			document.Liquid.txtGallons.value = " ";
+		}
+	</script>
+</head>
+<body bgcolor="gray">
+<body>
+<h1>Liquid Converter</h1>
+<form name="Liquid">
+<table bgcolor="red">
+<tr>
+	<td>Quarts:</td>
+	<td>
+		<input type="text" name="txtQuarts" id="txtQuarts" value=" "/>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td>
+		<input type="button" name="btnReset" id="btnReset" value="Reset" onclick="reset()"/>
+		<input type="button" name="btnCalculate" id="btnCalculate" value="Calculate" onclick="calculate()"/>
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Cups:</td>
+	<td>
+		<input type="text" name="txtCups" id="txtCups" value=" "/>
+	</td>
+<tr>
+	<td>Pints:</td>
+	<td>
+		<input type="text" name="txtPints" id="txtPints" value=" "/>
+	</td>
+<tr>
+	<td>Gallons:</td>
+	<td>
+		<input type="text" name="txtGallons" id="txtGallons" value=" "/>
+	</td>
+</tr>
+</table>
+</form>
+<h4>&#169; Adnar Lozano</h4>
+</body>
+</html>

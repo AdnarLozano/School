@@ -1,0 +1,67 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/25/14
+Project 9A
+-->
+<html>
+<head>
+	<title>Bubble Sort Stats</title>
+
+	<script>
+	document.writeln("<h1>");
+
+	var numbers = new Array();
+	var count = 0;
+	var flag = 0;
+	var k = 0;
+	var temp = 0;
+	var oneScore = 0;
+	var swaps = 0;
+
+	document.writeln("Your numbers are...<br/>");
+
+	while(oneScore >=0)
+	{
+		oneScore = prompt("Enter number (negative to quit): ");
+		oneScore = parseInt(oneScore);
+		if(oneScore < 0)
+		{
+			break;			
+		}
+		numbers[count] = parseFloat(oneScore);
+		document.writeln((count+1) + ". " + numbers[count] + "<br/>");
+		count += 1;
+	}
+
+	while(flag ==0)
+	{
+		flag = 1;
+		for(k = 0; k <= (count - 2); k++)
+		{
+			if(numbers[k] < numbers[k+1])
+			{
+				temp = numbers[k];
+				numbers[k] = numbers[k+1];
+				numbers[k+1] = temp;
+				flag = 0;
+				swaps += 1;
+			}
+		}
+	}
+	
+	numbers.sort();
+
+	document.writeln("Your numbers sorted in ascending order...<br/>");
+	for(k = 0; k <= (count -1); k++)
+	{
+		document.writeln((k+1) + ". " + numbers[k] + "<br/>");
+	}
+
+	document.writeln("Swaps: " + swaps);
+	document.writeln("</h1>");
+	</script>
+</head>
+</body>
+</html>

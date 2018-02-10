@@ -1,0 +1,85 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+11/4/14
+Programing Challenge Rectangle Calculator
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Rectangle Calculator</title>
+	<script>
+		function calculate()
+		{
+			var l = document.Rectangle.txtLength.value;
+			var w = document.Rectangle.txtWidth.value;
+			var perimeter, area, diagonal;
+
+			perimeter = ((l + w) * 2);
+			area = l * w;
+			diagonal = Math.sqrt((Math.pow(w, 2) + Math.pow(l, 2)));
+						
+			document.Rectangle.txtPerimeter.value = " " + perimeter.toFixed(2);
+			document.Rectangle.txtArea.value = " " + area.toFixed(2);
+			document.Rectangle.txtDiagonal.value = " " + diagonal.toFixed(2);
+		}
+
+		function reset()
+		{
+			document.Rectangle.txtLength.value = " ";
+			document.Rectangle.txtWidth.value = " ";
+			document.Rectangle.txtPerimeter.value = " ";
+			document.Rectangle.txtArea.value = " ";
+			document.Rectangle.txtDiagonal.value = " ";
+		}
+	</script>
+</head>
+<body bgcolor="grey">
+<body>
+<h1>Rectangle Calculator</h1>
+<form name="Rectangle">
+<table bgcolor="yellow">
+<tr>
+	<td>Length:</td>
+	<td>
+		<input type="text" name="txtLength" id="txtLength" value=" "/>
+	</td>
+	
+</tr>
+<tr>
+	<td>Width:</td>
+	<td>
+		<input type="text" name="txtWidth" id="txtWidth" value=" "/>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td>
+		<input type="button" name="btnReset" id="btnReset" value="Reset" onclick="reset()"/>
+		<input type="button" name="btnCalculate" id="btnCalculate" value="Calculate" onclick="calculate()"/>
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Perimeter:</td>
+	<td>
+		<input type="text" name="txtPerimeter" id="txtPerimeter" value=" "/>
+	</td>
+<tr>
+	<td>Area:</td>
+	<td>
+		<input type="text" name="txtArea" id="txtArea" value=" "/>
+	</td>
+<tr>
+	<td>Diagonal:</td>
+	<td>
+		<input type="text" name="txtDiagonal" id="txtDiagonal" value=" "/>
+	</td>
+</tr>
+</table>
+</form>
+<h4>&#169; Adnar Lozano</h4>
+</body>
+</html>

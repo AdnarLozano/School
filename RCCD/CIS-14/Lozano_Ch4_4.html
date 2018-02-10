@@ -1,0 +1,56 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+10/07/14
+Programing Challenge 4_4
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Factorial</title>
+<script type="text/javascript">	
+//		<-- Declarations -->
+		var usernum = 0;
+		var factorial = 1;
+//		<-- Main Function -->
+		function findFactorial() 
+		{
+			usernum = parseFloat(prompt("Enter a positive integer greater than 0:"));
+			while(usernum < 1 || parseInt(usernum) != usernum || isNaN(usernum))
+			{
+				usernum = parseFloat(prompt("Your entry must be a positive integer greater than 0. Please try again: "));
+			}
+			for(i = usernum; i > 1; i--)
+			{
+				factorial = factorial * i;
+			}
+				document.getElementById("result").innerHTML=("<h3>" + usernum + "! = " + factorial + "</h3>");
+			factorial = 1;
+		}	// end main function		
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+October 07, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Chapter 4 | Programming Challenge 4</h3>
+<body>
+		<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; color:white; background-color: #FF1A00;">
+			<p style="font-weight: bold;">Chapter 4 | Programming Challenge 4</p>
+			<p>The factorial of a positive integer, N, is defined as follows: </p>
+			<p>N! + 1 * 2 * 3 * 4 * ... * N</p>
+			<p>This page will find the factorial of a positive integer entered by the user. Begin the process by clicking on the 'BEGIN' button below.</p>
+			<br /><hr /><br />
+			<input type="button" onclick="findFactorial()" value="BEGIN" />
+			<div id="result">&nbsp;</div>
+		</div>
+</body>
+</html>
+
+ 

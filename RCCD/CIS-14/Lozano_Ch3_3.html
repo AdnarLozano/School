@@ -1,0 +1,47 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript
+C. Andersen
+09/30/14A
+Project_Chapter3_3
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Course Grade Converter</title>
+<script type="text/javascript">
+	
+	function getGradeAndConvert() {
+		studentGrade = prompt("Enter course average: ");
+		if(studentGrade < 60)
+		{alert("You earned an F");}
+		else if(studentGrade >= 60 && studentGrade <= 69.5)
+		{alert("You earned a D");}
+		else if(studentGrade >= 69.5 && studentGrade <= 79.5)
+		{alert("You earned a C");}
+		else if(studentGrade >= 79.5 && studentGrade <= 89.5)
+		{alert("You earned a B");}
+		else{alert("You earned an A");}
+	}
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+September 30, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Course Grade Converter</h3>
+<body>
+	<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #FF1A00;">
+		<p style="font-weight: bold;">Chapter 3 | Programming Challenge 3</p>
+		<p>This page will prompt user to enter a course average). This will then be converted to a letter grade based on the conversion table given in this Programming Challenge's description.</p>			
+		<br /><hr /><br />			
+		<input type="button" onclick="getGradeAndConvert()" value="Click here to enter grade." />
+	</div>
+</body>
+</html>

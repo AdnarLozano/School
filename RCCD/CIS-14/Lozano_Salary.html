@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>Salary Calculato</title>
+	<script>
+		function calculate()
+		{
+			var hours = document.Salary.txtHours.value;
+			var pay = document.Salary.txtPay.value;
+
+			var regular, overtime, total;
+
+			if(hours > 40)
+			{
+				regular = 40 * pay;
+				overtime = (hours - 40) * pay * 1.5;
+			}
+			else
+			{
+				regular = hours * pay; 
+				overtime = 0.00;
+			}
+
+			total = regular + overtime;
+
+			document.Salary.txtRegular.value = "$ " + regular.toFixed(2);
+			document.Salary.txtOvertime.value = "$ " + overtime.toFixed(2);
+			document.Salary.txtTotal.value = "$ " + total.toFixed(2);
+		}
+
+		function reset()
+		{
+			document.Salary.txtHours.value = " ";
+			document.Salary.txtPay.value = " ";
+			document.Salary.txtRegular.value = " ";
+			document.Salary.txtOvertime.value = " ";
+			document.Salary.txtTotal.value = " ";
+		}
+	</script>
+</head>
+<body bgcolor="red">
+<body>
+<h1>Salary Calculator</h1>
+<form name="Salary">
+<table bgcolor="yellow">
+<tr>
+	<td>Hours Worked:</td>
+	<td>
+		<input type="text" name="txtHours" id="txtHours" value=" "/>
+	</td>
+	
+</tr>
+<tr>
+	<td>Hourly Pay:</td>
+	<td>
+		<input type="text" name="txtPay" id="txtPay" value=" "/>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td>
+		<input type="button" name="btnReset" id="btnReset" value="Clear" onclick="reset()"/>
+		<input type="button" name="btnCalculate" id="btnCalculate" value="Calculate" onclick="calculate()"/>
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Regular Pay:</td>
+	<td>
+		<input type="text" name="txtRegular" id="txtRegular" value=" "/>
+	</td>
+<tr>
+	<td>Overtime Pay:</td>
+	<td>
+		<input type="text" name="txtOvertime" id="txtOvertime" value=" "/>
+	</td>
+<tr>
+	<td>Total Pay:</td>
+	<td>
+		<input type="text" name="txtTotal" id="txtTotal" value=" "/>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

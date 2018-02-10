@@ -1,0 +1,67 @@
+<!--
+Adnar Lozano
+CIS-14A: Javascript Programming
+C. Andersen
+10/07/14
+Programing Challenge 4_2
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Password Check</title>
+<script type="text/javascript">
+	
+//		<-- Declarations -->
+		var flag = 0;
+		var userword;
+		var userlgth;
+		//var i;
+		var msg = "Thank you, your password was validated";
+			
+//		<-- Main Function -->
+		function checkPassword() 
+		{
+			userword = prompt("Enter your password. It must contain exactly 8 characters and there can be no empty spaces:");
+			userlgth = userword.length;
+			for (i = 0; i < userlgth; i++)
+			{
+				if(userword.charAt(i) == " ")
+					flag = 1;
+			}
+			while(userlgth != 8 || flag == 1)
+			{
+				flag = 0;
+				userword = prompt("Please re-enter your password. It must contain exactly 8 characters and there can be no empty spaces:");
+				userlgth = userword.length;
+				for (i = 0; i < userlgth; i++)
+				{
+					if(userword.charAt(i) == " ")
+					flag = 1;
+				}
+			}
+			document.getElementById("message").innerHTML=("<h2>" +msg+ "</h2>");
+		}// end main function		
+</script>
+</head>
+<body bgcolor="ffffff">
+<font face="verdana">
+<h3>Adnar Lozano
+<br/>
+October 07, 2014
+<br/>
+CIS-14A: Javascript
+<br/><br/>
+Chapter 4 | Programming Challenge 2</h3>
+<body>
+		<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; color:white; background-color: #FF1A00;">
+			<p style="font-weight: bold;">Chapter 4 | Programming Challenge 2</p>
+			<p>This page will validate a password entered by the user. Begin the process by clicking on the 'BEGIN' button below.</p>
+			<br /><hr /><br />
+			<input type="button" onclick="checkPassword()" value="BEGIN" />
+			<div id="message">&nbsp;</div>
+		</div>
+</body>
+</html>
+
+ 
