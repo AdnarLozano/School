@@ -1,0 +1,140 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;}
+\margl1440\margr1440\vieww10980\viewh11260\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Adnar Lozano\
+CSE 330\
+4 / 6 / 17\
+Lab 1\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\fs30 \cf0 a) Review of Makefile
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Study the usage of make:
+\b0 \
+1. GNUmakefile, makefile, Makefile. In that order.\
+2. make [-f name], where name is a different file name\
+3. make -C dir, ex: -C /Home \
+4. make -v, i use version 3.81\
+5. make -I dir, ex: -I /Desktop where the different makefile is in the Desktop folder\
+
+\b Study the usage of cat:
+\b0 \
+6. It prints non-printing characters from makefile, replacing those characters\
+    with ^I for each tab, and puts a $ at the end of each line and at every empty\
+    line in the makefile\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\fs30 \cf0 b) Modular Programming
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 See attached zip file to run multiply. Here is a text version for each file\
+1. Source code for 
+\b \cf2 main.cpp
+\b0 \cf0 \
+#include <iostream>\
+#include <stdlib.h>\
+#include "functions.h"\
+int main(int argc, char* argv[]) \{\
+	double a = atof(argv[1]);\
+	double b = atof(argv[2]);\
+	if ( (a==0)||(b==0) )\
+		std::cout<<"\\033[0;31mInvalid input. "\
+			  "Enter numbers only\\033[0m\\n";\
+	else \{\
+		double result = product(a, b);\
+		print(result);	\
+	\}\
+	return 0;\
+\}\
+\
+2. Source code for 
+\b \cf2 product.cpp
+\b0 \cf0 \
+#include "functions.h"\
+double product(double a, double b) \{ return a * b; \}\
+\
+3. Source code for 
+\b \cf2 print.cpp
+\b0 \cf0 \
+#include <iostream>\
+#include "functions.h"\
+void print(double r) \{ std::cout<<"\\033[0;32m"<<r<<"\\033[0m\\n"; \}\
+\
+4. Source code for 
+\b \cf2 functions.h
+\b0 \cf0  header file\
+#ifndef FUNCTIONS_H\
+#define FUNCTIONS_H\
+extern double product(double a, double b);\
+extern void print(double r);\
+#endif\
+\
+5. Source code for the 
+\b \cf2 Makefile
+\b0 \cf0  with 
+\b \cf2 clean
+\b0 \cf0  target\
+multiply: main.o product.o print.o\
+	g++ -o multiply main.o product.o print.o\
+\
+main.o: main.cpp functions.h\
+	g++ -c main.cpp\
+\
+product.o: product.cpp functions.h\
+	g++ -c product.cpp\
+\
+print.o: print.cpp functions.h\
+	g++ -c print.cpp\
+\
+clean:\
+	rm -f *.o\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\fs32 \cf0 c) Basic Shell Programming
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Work to do:
+\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 Hello Adnar\
+Today is  \
+Sat Apr  8 16:55:29 PDT 2017\
+Number of user login : \
+       2\
+Calendar\
+     April 2017\
+Su Mo Tu We Th Fr Sa\
+                   1\
+ 2  3  4  5  6  7  8\
+ 9 10 11 12 13 14 15\
+16 17 18 19 20 21 22\
+23 24 25 26 27 28 29\
+30
+\f0\fs24 \
+
+\b Exercise on shell scripts:\
+
+\b0 Included in the zip folder are the shell scripts for this exercise\
+They are 
+\b \cf2 first
+\b0 \cf0 , 
+\b \cf2 ginfo
+\b0 \cf0 , and 
+\b \cf2 Adnar_my_shell_script
+\b0 \cf0  \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Q.1)	x=10\
+	echo $x\
+Q.2)	xn=CSUSB\
+	echo $xn\
+Q.3)	x=6\
+	y=3\
+	sum=$((x+y))\
+	echo $sum}

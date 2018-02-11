@@ -1,0 +1,8 @@
+x=10
+echo $x
+xn=CSUSB
+echo $xn
+x=6
+y=3
+sum=$((x+y))
+echo $sum
