@@ -1,0 +1,10 @@
+#|
+  Adnar Lozano
+  CSE-320
+  Lab 3
+  10/5/17
+|#
+
+#lang racket
+;(quote (+ 1 2))
+(eval '(+ 1 2))

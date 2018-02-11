@@ -1,0 +1,31 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl-440\pardirnatural
+
+\f0\fs36 \cf0 \AppleTypeServicesU1 Adnar Lozano\
+CSE-320\
+Lab 1\
+09/23/17\
+\
+\pard\pardeftab720\sl-440
+\cf0 \expnd0\expndtw0\kerning0
+Do Now! \
+\
+What happens if you mis-apply functions to the wrong kinds of values? For instance, what if you give the caml constructor a string? What if you send a number into each version of good? above? \
+\
+
+\b Ans
+\b0 : \
+Basically we get an error saying that the \cf2 typecheck failed\cf0 , particularly because it was a \cf2 number vs.  string\cf0  in the sub-class named \cf2 caml\cf0 . The argument for the constructor of caml is expecting a numerical value and nothing else.\
+If we were to send a number into each version of 
+\b good?
+\b0  (
+\b test#
+\b0  for my program), we will see again that the \cf2 typecheck failed\cf0  again, this time is a\cf2  boolean vs. number\cf0  in the boolean function called 
+\b good?
+\b0  (
+\b test#
+\b0  in my program). Similarly, the boolean function is expecting either a true or false value and nothing else.\
+}
