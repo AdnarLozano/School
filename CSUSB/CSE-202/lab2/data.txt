@@ -1,0 +1,42 @@
+Maps
+
+A map can be seen as a more generalized version of vector. A vector associates an integer with each value it stores; for a vector of size 5, the index 0 is associated with the first element and the index 4 is associated with the last element. For maps, the data type for the indexing values do not have to be integers, they could anything, such as strings.
+
+Every element stored in a map is actually a pair of values: the indexing value (known as the key) and the indexed value (known simply as the "value"). People often refer to an element in a map as a key/value pair.
+
+A real life example of a map is a phone book. A phone book associates names to phone numbers; in C++ this can be represented by the data type map<string, int> which is a mapping of strings to integers.
+
+Let's dive step by step into the usage of maps in C++. This is a declaration of a map variable:
+
+map<string, string> synonyms;
+
+The name of this variable is synonyms and the data type is map<string, string>. This variable is capable of associating a unique string value to another string value.
+
+To store or retrieve a key/value pair in this data structure, we can use the subscript operator:
+
+synonyms["soda"s] = "pop"s;
+synonyms["coffee"s] = "joe"s;
+synonyms["start"s] = "begin"s;
+synonyms["stop"s] = "end"s;
+
+These four statements create an association for each pair of strings. After this, a statement like cout << synonyms["soda"s]; would display "pop" in the terminal. So the way you use maps are very similar to vectors except the value within the subscript operator does not need to be an integer index.
+
+A map shares similar member functions as vector. Including:
+
+    size: Gets the number of elements
+    clear: Removes all elements
+    empty: Checks whether there are no elements
+
+To iterate over the elements of a map, you can use a range-based for statement:
+
+for (pair<string, string> s : synonyms) {
+	cout << s.first << ":"s << s.second << endl;
+}
+For our synonyms example, the output would be:
+
+soda:pop
+coffee:joe
+start:begin
+stop:end
+
+The data type pair<string, string> represents each key/value pair stored in the map. It is a class template where the first data type qualifier is the data type of the keys and the second data type qualifier is the data type of the values. 
