@@ -1,0 +1,9 @@
+Create a program that makes you guess the letters of a word or phrase. It will be a game is similar to hangman. Name your program file hangman and your source file hangman.cpp
+
+The program should start by displaying underscores for each letter in the word or phrase. Then the user guesses 1 letter. If the letter is in your word/phrase then the program replaces all underscores with that letter, the partially solved word/phrase is refreshed and displayed again, and the user can guess another letter.
+
+If the user guesses a letter that doesn't exist in your word/phrase 6 times, then the program ends with the message "You Lose!"
+
+When the user guesses all the correct letters, then the program ends with the message "You win!"
+
+Hint: You can implement this program using character vectors.
